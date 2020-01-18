@@ -4,8 +4,9 @@
         <!DOCTYPE html>
         <html lang=\"it\">
             <head>
-                <link rel=\"stylesheet\" href=\"/boatSharing/css/bootstrap/bootstrap.min.css\">
                 <title>BoatSharing - $title</title>
+                <link rel=\"stylesheet\" href=\"/boatSharing/css/bootstrap/bootstrap.min.css\">
+                <script src=\"/boatSharing/js/bootstrap/bootstrap.min.js\"></script>
             </head>";
     }
 ?>
