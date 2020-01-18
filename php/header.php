@@ -2,9 +2,9 @@
     function the_header($title){
         echo "
         <!DOCTYPE html>
-        <html>
+        <html lang=\"it\">
             <head>
-                <title>BoatSharing: $title</title>
+                <title>BoatSharing - $title</title>
             </head>";
     }
 ?>
