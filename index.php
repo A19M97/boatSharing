@@ -5,7 +5,9 @@
     require_once(__ROOT__."/boatSharing/php/navbar.php");
     the_header("Homepage");
     echo "<body>";
-    the_navbar();
+    echo "<div class=\"container-fluid\">";
+    //the_navbar();
+    echo "</div>";
     echo "</body>";
     the_footer();
 ?>
