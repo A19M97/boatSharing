@@ -1,0 +1,15 @@
+body, html{
+    display: flex;
+    min-height: 100%;
+    min-width: 100%;
+}
+a{
+    text-decoration: none;
+    
+}
+.primary-color{
+    color: #ffffff;
+}
+.secondary-color{
+    color: red;
+}

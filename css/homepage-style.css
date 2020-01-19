@@ -1,0 +1,21 @@
+.homepage-container{
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url(/boatSharing/images/mare-tramonto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hp-login-button{
+    height: 50px;
+}
+#hp-login-button:hover{
+    background-color: #ffffff;
+    opacity: 0.2;
+    cursor: pointer;
+}
+.hp-a-login{
+    line-height: 50px;
+}
