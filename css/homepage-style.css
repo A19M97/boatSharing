@@ -14,7 +14,6 @@
 #hp-login-button:hover{
     background-color: #ffffff;
     opacity: 0.2;
-    cursor: pointer;
 }
 .hp-a-login{
     line-height: 50px;
@@ -27,4 +26,28 @@
 }
 .title-f-letter{
     color: aqua;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.card-images-size{
+    width: 100px;
+    height: 100px;
+}
+.info-card{
+   padding: 35px;
 }

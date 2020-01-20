@@ -10,6 +10,7 @@
                 <link rel=\"stylesheet\" href=\"/boatSharing/css/general-style.css\">
                 <link rel=\"stylesheet\" href=\"/boatSharing/css/homepage-style.css\">
                 <script src=\"/boatSharing/js/jquery/jquery-3.4.1.min.js\"></script>
+                <script src=\"/boatSharing/js/jquery/homepage.js\"></script>
             </head>";
     }
 ?>
