@@ -19,3 +19,12 @@
 .hp-a-login{
     line-height: 50px;
 }
+#hp-main-title-container{
+    height: fit-content;
+}
+#hp-main-title{
+    font-size: 100px;
+}
+.title-f-letter{
+    color: aqua;
+}

@@ -5,11 +5,27 @@ body, html{
 }
 a{
     text-decoration: none;
-    
+    color: #fff;
+}
+a:link {
+    color: #fff;
+}
+a:visited {
+    color: #fff;
+}
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+a:active {
+    color: #000;
 }
 .primary-color{
     color: #ffffff;
 }
 .secondary-color{
-    color: red;
+    color: aquamarine;
+}
+.primary-font{
+    font-family: "Roboto";
 }
