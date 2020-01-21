@@ -35,6 +35,9 @@ a:active {
 .primary-font{
     font-family: "Roboto";
 }
+.secondary-font{
+    font-family: "Roboto"
+}
 .pointer{
     cursor: pointer;
 }
