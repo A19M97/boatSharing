@@ -1,30 +1,29 @@
 <?php
+if(isset($_POST['email']) && isset($_POST['pass'])){
+    require_once('db/mysql_credentials.php');
+    require_once('php/utility/utility-functions.php');
 
-// TODO: change credentials in the db/mysql_credentials.php file
-require_once('db/mysql_credentials.php');
+    // Add session control, header, ...
 
-// Add session control, header, ...
-// Open DBMS Server connection
+    $con = mysqli_connect($mysql_host, $mysql_user, $mysql_pass, $mysql_db);
 
-// Get credentials from $_POST['email'] and $_POST['pass']
-// but do it IN A SECURE WAY
-$email = null; // replace null with $_POST and sanitization
-$pass = null; // replace null with $_POST and sanitization
+    $email = $_POST['email']; 
+    $pass = $_POST['pass']; 
 
-function login($email, $pass, $db_connection) {
-    // TODO: login logic here
-    
-    // Return logged user
-    return null;
+    // Get user from login
+    $user = login($email, $pass, $con);
+
+    if ($user) {
+        // Welcome message
+        echo "Welcome $user!";
+    } else {
+        // Error message
+        echo "Wrong email or password";
+    }
 }
-
-// Get user from login
-$user = login($email, $pass, $con);
-
-if ($user) {
-    // Welcome message
-    echo "Welcome $user!";
-} else {
-    // Error message
-    echo "Wrong email or password";
-}
+?>
+<form action="login.php" method="POST">
+    <input type="email" name="email">
+    <input type="password" name="pass">
+    <input type="submit" value="Submit">
+</form>

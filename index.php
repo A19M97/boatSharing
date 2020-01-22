@@ -9,7 +9,7 @@
     <body>
         <div class="container-fluid homepage-container h-100 mh-100">
             <div class="row h-100">
-                <a href="/boatSharing/login" id="hp-login-button" class="align-middle align-self-start hp-a-login col-md-12 text-right align-middle">
+                <a href="/boatSharing/login.php" id="hp-login-button" class="align-middle align-self-start hp-a-login col-md-12 text-right align-middle">
                     Login 
                     <i class="fas fa-sign-in-alt"></i>
                 </a>
