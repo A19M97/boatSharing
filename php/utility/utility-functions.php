@@ -1,10 +1,10 @@
 <?php
 function encryptPassword($pass){
-    return $pass;
+    return hash('sha256', $pass);
 }
 
 function login($email, $pass, $db_connection) {
-    $stmt = mysqli_prepare($db_connection, "SELECT * FROM users WHERE username = ? AND password = ?");
+    $stmt = mysqli_prepare($db_connection, "SELECT * FROM users WHERE email = ? AND password = ?");
     if(!$stmt) 
         return null;
 
