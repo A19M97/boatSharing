@@ -2,6 +2,7 @@
 
 // TODO: change credentials in the db/mysql_credentials.php file
 require_once('db/mysql_credentials.php');
+require_once('php/utility/utility-functions.php');
 
 // Open DBMS Server connection
 
@@ -14,15 +15,6 @@ $password_confirm = null; // replace null with $_POST and sanitization
 
 // Get additional values from $_POST, but do it IN A SECURE WAY
 // If you have additional values, change functions params accordingly
-
-function insert_user($email, $first_name, $last_name, $password, $password_confirm, $db_connection) {
-    // TODO: check if passwords match
-    
-    // TODO: registration logic here
-    
-    // Return if the registration was successful
-    return false;
-}
 
 // Get user from login
 $successful = insert_user($email, $first_name, $last_name, $password, $password_confirm, $con);

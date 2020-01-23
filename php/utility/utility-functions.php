@@ -27,4 +27,13 @@ function login($email, $pass, $db_connection) {
 
     return $id;
 }
+
+function insert_user($email, $first_name, $last_name, $password, $password_confirm, $db_connection) {
+    // TODO: check if passwords match
+    
+    // TODO: registration logic here
+    
+    // Return if the registration was successful
+    return false;
+}
 ?>
