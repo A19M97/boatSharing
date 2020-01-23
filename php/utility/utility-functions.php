@@ -4,11 +4,12 @@ function encryptPassword($pass){
 }
 
 function login($email, $pass, $db_connection) {
-    $stmt = mysqli_prepare($db_connection, "SELECT * FROM users WHERE email = ? AND password = ?");
+    $stmt = mysqli_prepare($db_connection, "SELECT * FROM users WHERE email = ? AND pass = ?");
     if(!$stmt) 
         return null;
 
     $pass = encryptPassword($pass);
+
     /* bind parameters for markers */
     mysqli_stmt_bind_param($stmt, "ss", $email, $pass);
 
@@ -16,7 +17,7 @@ function login($email, $pass, $db_connection) {
     mysqli_stmt_execute($stmt);
 
     /* bind result variables */
-    mysqli_stmt_bind_result($stmt, $id, $email, $pass );
+    mysqli_stmt_bind_result($stmt, $email, $name, $surname, $pass, $role );
 
     /* fetch value */
     if(!mysqli_stmt_fetch($stmt))
@@ -29,11 +30,19 @@ function login($email, $pass, $db_connection) {
 }
 
 function insert_user($email, $first_name, $last_name, $password, $password_confirm, $db_connection) {
-    // TODO: check if passwords match
     
-    // TODO: registration logic here
-    
-    // Return if the registration was successful
-    return false;
+    $stmt = mysqli_prepare($db_connection, "INSERT INTO users VALUES(?, ?, ?, ?, ?)");
+    if(!$stmt) 
+        return null;
+
+    $password = encryptPassword($password);
+    $role = "user";
+
+    /* bind parameters for markers */
+    mysqli_stmt_bind_param($stmt, "sssss", $email, $first_name, $last_name, $password, $role);
+
+    /* execute query */
+    return mysqli_stmt_execute($stmt);
+
 }
 ?>
