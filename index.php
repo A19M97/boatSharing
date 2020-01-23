@@ -1,15 +1,14 @@
 <?php
-    define('__ROOT__', dirname(dirname(__FILE__))."/boatSharing");
-    define('__IMG_PATH__', "/boatSharing/images");
-    require_once(__ROOT__."/php/header.php");
-    require_once(__ROOT__."/php/footer.php");
-    require_once(__ROOT__."/php/navbar.php");
+    require_once('php/utility/constants.php');
+    require_once('php/header.php');
+    require_once('php/footer.php');
+    require_once('php/navbar.php'); //TODO: Check for navbar, here is unused;
     the_header("Homepage");
     ?>
     <body>
         <div class="container-fluid homepage-container h-100 mh-100">
             <div class="row h-100">
-                <a href="/boatSharing/login.php" id="hp-login-button" class="align-middle align-self-start hp-a-login col-md-12 text-right align-middle">
+                <a href="login.php" id="hp-login-button" class="align-middle align-self-start hp-a-login col-md-12 text-right align-middle">
                     Login 
                     <i class="fas fa-sign-in-alt"></i>
                 </a>
