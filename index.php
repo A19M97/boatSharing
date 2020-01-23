@@ -3,12 +3,12 @@
     require_once('php/header.php');
     require_once('php/footer.php');
     require_once('php/navbar.php'); //TODO: Check for navbar, here is unused;
-    the_header("Homepage");
+    the_header("Homepage", ["homepage-style"]);
     ?>
     <body>
         <div class="container-fluid homepage-container h-100 mh-100">
             <div class="row h-100">
-                <a href="login.php" id="hp-login-button" class="align-middle align-self-start hp-a-login col-md-12 text-right align-middle">
+                <a href="login.php" id="hp-login-button" class="align-middle align-self-start hp-a-login col-md-12 text-right">
                     Login 
                     <i class="fas fa-sign-in-alt"></i>
                 </a>
@@ -33,21 +33,21 @@
             <div id="hp-third-block" class="row h-100 mh-100 justify-content-center">
                 <div class="col-md-10 align-self-center ">
                     <div class="card col-md-4 float-left text-center info-card background-secondary-color">
-                        <img class="card-img-top card-images-size mx-auto" src="<?php echo __IMG_PATH__; ?>/save.png" alt="economico">
+                        <img class="card-img-top card-images-size mx-auto" src="images/save.png" alt="economico">
                         <div class="card-body">
                             <h4 class="card-title">Economico</h4>
                             <p class="card-text">Dimenticati delle spese di manutenzione, del costo di ormeggio, dell'assicurazione, delle dotazioni di sicurezza, pensiamo a tutto noi. La quota copre tutti i costi.</p>
                         </div>
                     </div>
                     <div class="card col-md-4 float-left text-center info-card background-secondary-color">
-                        <img class="card-img-top card-images-size mx-auto" src="<?php echo __IMG_PATH__; ?>/yoga.png" alt="rilassante">
+                        <img class="card-img-top card-images-size mx-auto" src="images/yoga.png" alt="rilassante">
                         <div class="card-body">
                             <h4 class="card-title">Comodo</h4>
                             <p class="card-text">Consulta il calendario anche dal tuo cellulare, decidi quando uscire e seleziona le date: ora la barca è prenotata, la troverai pronta all'ormeggio.</p>
                         </div>
                     </div>
                     <div class="card col-md-4 float-left text-center info-card background-secondary-color">
-                        <img class="card-img-top card-images-size mx-auto" src="<?php echo __IMG_PATH__; ?>/time.png" alt="rapido">
+                        <img class="card-img-top card-images-size mx-auto" src="images/time.png" alt="rapido">
                         <div class="card-body">
                             <h4 class="card-title">Rapido</h4>
                             <p class="card-text">Non devi attendere di espletare le procedure di check-in e di check-out: arrivi, sali in barca e molli l'ormeggio! La barca è a tua disposizione per 6 settimane all'anno.</p>

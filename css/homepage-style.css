@@ -3,7 +3,7 @@
     linear-gradient(
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
-    ), url(/boatSharing/images/mare-tramonto.jpg);
+    ), url(../images/mare-tramonto.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }

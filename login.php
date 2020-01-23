@@ -25,12 +25,30 @@ if(isset($_POST['email']) && isset($_POST['pass'])){
         echo "Wrong email or password";
     }
 }
-the_header("Login");
+the_header("Login", ["login-style"]);
 ?>
-<form action="login.php" method="POST">
-    <input type="email" name="email">
-    <input type="password" name="pass">
-    <input type="submit" value="Submit">
-</form>
+
+<body>
+    <div class="container-fluid homepage-container h-100 mh-100">
+        <div id="login-form-container" class="row h-100">
+            <a href="index.php" id="login-undo-button" class="align-middle align-self-start col-md-12 text-left login-undo-a position-absolute">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div  class="col-md-6 offset-md-3 text-center align-self-center">
+                <form action="login.php" method="POST">
+                    <div class="col-md-12">
+                        <input type="email" name="email" class="w-100">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="password" name="pass" class="w-100">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" value="Submit" class="w-100">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
 <?php
 the_footer();

@@ -21,12 +21,12 @@ function login($email, $pass, $db_connection) {
 
     /* fetch value */
     if(!mysqli_stmt_fetch($stmt))
-        $id = null;
+        $email = null;
 
     /* close statement */
     mysqli_stmt_close($stmt);
 
-    return $id;
+    return $email;
 }
 
 function insert_user($email, $first_name, $last_name, $password, $password_confirm, $db_connection) {
