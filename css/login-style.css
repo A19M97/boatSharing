@@ -1,4 +1,4 @@
-#login-form-container{
+#login-page-container{
     background:
     linear-gradient(
       rgba(0, 0, 0, 0.4),
@@ -17,4 +17,19 @@
 }
 .login-undo-a{
     line-height: 50px;
+}
+.login-input{
+    height: 40px;
+    margin: 10px 0 10px 0;
+}
+#login-form-container{
+    padding: 30px;;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+.login-alert-error{
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    margin: 10px 0 10px 0;
 }

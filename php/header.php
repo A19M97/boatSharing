@@ -4,7 +4,7 @@
         <!DOCTYPE html>
         <html lang="it">
             <head>
-                <title>BoatSharing - $title</title>
+                <title>BoatSharing - <?php echo $title; ?></title>
                 <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
                 <link rel="stylesheet" href="css/fontawesome/all.min.css" >
                 <link rel="stylesheet" href="css/general-style.css">
