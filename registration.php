@@ -17,12 +17,10 @@ if(isset($_POST['sign-up'])){
             $message['is_error'] = true;
             $message['description'] = "Le password devono coincidere.";
         }else{
-
-            require_once('db/mysql_credentials.php');
             require_once('php/utility/utility-functions.php');
 
             // Open DBMS Server connection
-            $con = mysqli_connect($mysql_host, $mysql_user, $mysql_pass, $mysql_db);
+            $con = get_db_connection();
 
             // Get values from $_POST, but do it IN A SECURE WAY
             $email = $_POST['email']; // replace null with $_POST and sanitization

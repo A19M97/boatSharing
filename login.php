@@ -3,14 +3,11 @@ require_once('php/header.php');
 require_once('php/footer.php');
 if(isset($_POST['sign-in'])){
     if(isset($_POST['email']) && isset($_POST['pass'])){
-        require_once('db/mysql_credentials.php');
         require_once('php/utility/utility-functions.php');
-        
-
         // Add session control, header, ...
 
         // Open DBMS Server connection
-        $con = mysqli_connect($mysql_host, $mysql_user, $mysql_pass, $mysql_db);
+        $con = get_db_connection();
 
         $email = $_POST['email']; 
         $pass = $_POST['pass']; 

@@ -45,4 +45,9 @@ function insert_user($email, $first_name, $last_name, $password, $password_confi
     return mysqli_stmt_execute($stmt);
 
 }
+
+function get_db_connection(){
+    require_once('db/mysql_credentials.php');
+    return mysqli_connect($mysql_host, $mysql_user, $mysql_pass, $mysql_db);
+}
 ?>
