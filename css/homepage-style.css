@@ -3,7 +3,7 @@
     linear-gradient(
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
-    ), url(../images/mare-tramonto.jpg);
+    ), url(../images/scia.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -12,8 +12,7 @@
     height: 50px;
 }
 #hp-login-button:hover{
-    background-color: #ffffff;
-    opacity: 0.2;
+    background: rgba(255, 255, 255, 0.2);
 }
 .hp-a-login{
     line-height: 50px;

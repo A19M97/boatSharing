@@ -21,12 +21,20 @@ function login($email, $pass, $db_connection) {
 
     /* fetch value */
     if(!mysqli_stmt_fetch($stmt))
-        $email = null;
+        $user = null;
+    else{
+        $user = [
+            'email'     => $email,
+            'name'      => $name,
+            'surname'   => $surname,
+            'role'      => $role
+        ];
+    }
 
     /* close statement */
     mysqli_stmt_close($stmt);
 
-    return $email;
+    return $user;
 }
 
 function insert_user($email, $first_name, $last_name, $password, $password_confirm, $db_connection) {
@@ -42,7 +50,10 @@ function insert_user($email, $first_name, $last_name, $password, $password_confi
     mysqli_stmt_bind_param($stmt, "sssss", $email, $first_name, $last_name, $password, $role);
 
     /* execute query */
-    return mysqli_stmt_execute($stmt);
+    mysqli_stmt_execute($stmt);
+
+    /* return error code: 0 no error, 1062 email already used */
+    return mysqli_stmt_errno($stmt);
 
 }
 

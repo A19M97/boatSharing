@@ -1,4 +1,4 @@
-#login-page-container{
+#registration-page-container{
     background:
     linear-gradient(
       rgba(0, 0, 0, 0.4),
@@ -8,28 +8,28 @@
     background-size: cover;
 }
 
-#login-undo-button{
+#registration-undo-button{
     height: 50px;
 }
-#login-undo-button:hover{
+#registration-undo-button:hover{
     background: rgba(255, 255, 255, 0.2);
 }
-.login-undo-a{
+.registration-undo-a{
     line-height: 50px;
 }
-.login-input{
+.registration-input{
     height: 40px;
     text-align: center;
 }
-.login-input-div{
+.registration-input-div{
     margin: 10px 0 10px 0;
 }
-#login-form-container{
+#registration-form-container{
     padding: 30px;;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
 }
-.login-alert-error{
+.registration-alert-error{
     height: 40px;
     line-height: 40px;
     padding: 0;
