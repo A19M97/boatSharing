@@ -58,8 +58,10 @@
                     <a href="#hp-boats-block"><i id="hp-third-arrow" class="fas fa-chevron-down fa-3x secondary-color bounce pointer"></i></a>  
                 </div>  
             </div>
+        <?php
+            the_footer();
+        ?>
         </div>
+        
     </body>
-    <?php
-    the_footer();
-?>
+</html>
