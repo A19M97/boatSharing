@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('php/header.php');
+    require_once('php/head.php');
     require_once('php/footer.php');
     /**
      * $message: associative array. 
@@ -18,7 +18,7 @@
                 $message['is_error'] = true;
                 $message['description'] = "Le password devono coincidere.";
             }else{
-                require_once('php/utility/utility-functions.php');
+                require_once('php/utility/utility_functions.php');
 
                 // Open DBMS Server connection
                 $con = get_db_connection();
@@ -35,7 +35,7 @@
                 switch($db_response){
                     case 0:
                         /* Registration OK. */
-                        require_once('php/utility/session-functions.php');
+                        require_once('php/utility/session_functions.php');
                         $user = [
                             'email'     => $email,
                             'name'      => $first_name,
@@ -61,7 +61,7 @@
             $message['description'] = "Tutti i campi sono obbligatori.";
         }
     }
-    the_header("Registrati", ["registration-style"]);
+    the_head("Registrati", ["registration-style"]);
 ?>
 <body>
     <div class="container-fluid  h-100 mh-100">
@@ -75,10 +75,10 @@
                 </div>
                 <form action="registration.php" method="POST">
                     <div class="col-md-12 registration-input-div">
-                        <input type="firstname" name="firstname" <?php if(isset($_POST['firstname'])) echo 'value="'.$_POST['firstname'].'"'; ?> class="w-100 registration-input" placeholder="Nome">
+                        <input type="text" name="firstname" <?php if(isset($_POST['firstname'])) echo 'value="'.$_POST['firstname'].'"'; ?> class="w-100 registration-input" placeholder="Nome">
                     </div>
                     <div class="col-md-12 registration-input-div">
-                        <input type="lastname" name="lastname" <?php if(isset($_POST['firstname'])) echo 'value="'.$_POST['lastname'].'"'; ?> class="w-100 registration-input" placeholder="Cognome">
+                        <input type="text" name="lastname" <?php if(isset($_POST['firstname'])) echo 'value="'.$_POST['lastname'].'"'; ?> class="w-100 registration-input" placeholder="Cognome">
                     </div>
                     <div class="col-md-12 registration-input-div">
                         <input type="email" name="email" <?php if(isset($_POST['firstname'])) echo 'value="'.$_POST['email'].'"'; ?> class="w-100 registration-input" placeholder="E-mail">

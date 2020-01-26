@@ -1,9 +1,9 @@
 <?php
     require_once('php/utility/constants.php');
-    require_once('php/header.php');
+    require_once('php/head.php');
     require_once('php/footer.php');
     require_once('php/navbar.php'); //TODO: Check for navbar, here is unused;
-    the_header("Homepage", ["homepage-style"]);
+    the_head("Homepage", ["homepage-style"]);
     ?>
     <body>
         <div class="container-fluid homepage-container h-100 mh-100">
@@ -12,12 +12,12 @@
                     Login 
                     <i class="fas fa-sign-in-alt"></i>
                 </a>
-                <div id="hp-main-title-container"class="col-md-6 offset-md-3 text-center align-self-center">
+                <div id="hp-main-title-container" class="col-md-6 offset-md-3 text-center align-self-center">
                     <h1 id="hp-main-title" class="primary-color primary-font"><span class="secondary-color">B</span>oat<span class="secondary-color">S</span>haring</h1>
-                    <h2 id="hp-subtitle" class="secondary-color secondary-font">Una barca sempre a portata di mano</h1>
+                    <h2 id="hp-subtitle" class="secondary-color secondary-font">Una barca sempre a portata di mano</h2>
                 </div>
                 <div class="col-md-6 offset-md-3 text-center align-self-end ">
-                    <a href="#hp-second-block"><i id="hp-first-arrow"class="fas fa-chevron-down fa-3x secondary-color bounce pointer"></i></a>  
+                    <a href="#hp-second-block"><i id="hp-first-arrow" class="fas fa-chevron-down fa-3x secondary-color bounce pointer"></i></a>  
                 </div>
             </div>
             <div id="hp-second-block" class="row h-100 mh-100 justify-content-center">
@@ -27,7 +27,7 @@
                     </div>    
                 </div>
                 <div class="col-md-6 text-center align-self-end position-absolute">
-                    <a href="#hp-third-block"><i id="hp-first-arrow"class="fas fa-chevron-down fa-3x secondary-color bounce pointer"></i></a>  
+                    <a href="#hp-third-block"><i id="hp-secondarrow" class="fas fa-chevron-down fa-3x secondary-color bounce pointer"></i></a>  
                 </div>
             </div>
             <div id="hp-third-block" class="row h-100 mh-100 justify-content-center">
@@ -55,18 +55,10 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center align-self-end position-absolute">
-                    <a href="#hp-boats-block"><i id="hp-second-arrow"class="fas fa-chevron-down fa-3x secondary-color bounce pointer"></i></a>  
+                    <a href="#hp-boats-block"><i id="hp-third-arrow" class="fas fa-chevron-down fa-3x secondary-color bounce pointer"></i></a>  
                 </div>  
             </div>
         </div>
-        <!-- MedBoat Sharing ti offre l'utilizzo annuale di una nuova barca, condivisa con altri 7 Members. 
-                    Decidi tu quando usarla, per una settimana intera o anche solo per una giornata. 
-                    Avrai a disposizione le chiavi e troverai sempre la tua barca pronta per salpare, 
-                    senza bisogno di effettuare check-in. Devi solo pensare a goderti le tue giornate in mare, 
-                    pensiamo noi sia alla manutenzione che alle eventuali riparazioni.
-                    Se invece stai pensando di comprare una barca ma ti preoccupano i costi che andrai a sostenere e gli impegni logistici che questa richiede, 
-                    ti proponiamo di partecipare al programma Armatore di MedBoat Sharing, 
-                    risparmi sull'acquisto e ti togli ogni pensiero. -->
     </body>
     <?php
     the_footer();

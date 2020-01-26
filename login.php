@@ -1,11 +1,11 @@
 <?php
 session_start();
-require_once('php/header.php');
+require_once('php/head.php');
 require_once('php/footer.php');
 if(isset($_POST['sign-in'])){
     if(isset($_POST['email']) && isset($_POST['pass'])){
-        require_once('php/utility/utility-functions.php');
-        require_once('php/utility/session-functions.php');
+        require_once('php/utility/utility_functions.php');
+        require_once('php/utility/session_functions.php');
         
         // Open DBMS Server connection
         $con = get_db_connection();
@@ -24,7 +24,7 @@ if(isset($_POST['sign-in'])){
         }
     }
 }
-the_header("Login", ["login-style"]);
+the_head("Login", ["login-style"]);
 ?>
 
 <body>
