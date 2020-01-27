@@ -1,17 +1,29 @@
 <?php
-    require_once('php/utility/constants.php');
+    session_start();
+    require_once('php/utility/session_functions.php');
     require_once('php/head.php');
     require_once('php/footer.php');
-    require_once('php/navbar.php'); //TODO: Check for navbar, here is unused;
     the_head("Homepage", ["homepage-style"]);
     ?>
     <body>
         <div class="container-fluid homepage-container h-100 mh-100">
             <div class="row h-100">
-                <a href="login.php" id="hp-login-button" class="align-middle align-self-start hp-a-login col-md-12 text-right">
-                    Login 
-                    <i class="fas fa-sign-in-alt"></i>
-                </a>
+                <?php
+                if(!is_logged_in()){
+                ?>
+                    <a href="login.php" id="hp-login-button" class="align-middle align-self-start hp-a-login col-md-12 text-right">
+                        Login <i class="fas fa-sign-in-alt"></i>
+                    </a>
+                <?php 
+                }else{
+                ?>
+                    <a href="show_profile.php" id="hp-login-button" class="align-middle align-self-start hp-a-login col-md-12 text-right">
+                        Profilo <i class="fas fa-user"></i>
+                    </a>
+                <?php 
+                }
+                ?>
+                
                 <div id="hp-main-title-container" class="col-md-6 offset-md-3 text-center align-self-center">
                     <h1 id="hp-main-title" class="primary-color primary-font"><span class="secondary-color">B</span>oat<span class="secondary-color">S</span>haring</h1>
                     <h2 id="hp-subtitle" class="primary-color secondary-font">Una barca sempre a portata di mano</h2>
