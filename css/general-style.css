@@ -17,7 +17,7 @@ a:visited {
     color: #fff;
 }
 a:hover {
-    color: aquamarine;
+    color: #2E9CCA;
     text-decoration: none;
 }
 a:active {
@@ -27,10 +27,10 @@ a:active {
     color: #ffffff;
 }
 .secondary-color{
-    color: aquamarine;
+    color: #2E9CCA;
 }
 .background-secondary-color{
-    background-color: aquamarine;
+    background-color: #2E9CCA;
 }
 .primary-font{
     font-family: "Roboto";
@@ -45,4 +45,43 @@ input{
     border-radius: 4px;
     border: none;
 }
+#logged-header{
+    height: 90px;
+    background-color: #25274D;
+    z-index: 2;
+}
+#header-logo{
+    line-height: 90px;
+    font-size: 60px;
+}
+#logged-footer{
+    background-color: #25274D;
+    z-index: 2;
+    height: 70px;
+}
+#footer-copyright{
+    color: #fff;
+    line-height: 70px;;
+}
+#navbar{
+    background-color: #2E9CCA;
+    padding-top: 90px!important;
+    
+}
+.nav-list-item-container{
+    height: 40px;
+    line-height: 40px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.nav-item-inactive:hover{
+    background-color: #AAABB8;
+}
+.nav-item-active{
+    background-color: #464866;
+}
+.nav-item-active:hover{
+    background-color: #464866;
+}
+
 

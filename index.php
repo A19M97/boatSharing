@@ -14,7 +14,7 @@
                 </a>
                 <div id="hp-main-title-container" class="col-md-6 offset-md-3 text-center align-self-center">
                     <h1 id="hp-main-title" class="primary-color primary-font"><span class="secondary-color">B</span>oat<span class="secondary-color">S</span>haring</h1>
-                    <h2 id="hp-subtitle" class="secondary-color secondary-font">Una barca sempre a portata di mano</h2>
+                    <h2 id="hp-subtitle" class="primary-color secondary-font">Una barca sempre a portata di mano</h2>
                 </div>
                 <div class="col-md-6 offset-md-3 text-center align-self-end ">
                     <a href="#hp-second-block"><i id="hp-first-arrow" class="fas fa-chevron-down fa-3x secondary-color bounce pointer"></i></a>  

@@ -1,10 +1,18 @@
 <?php
-    function the_footer(){
+
+function the_footer(){
+    ?>
+        </html>
+    <?php
+}
+
+
+    function the_footer_for_logged(){
         ?>
-                <div class="col-md-12 text-center align-self-end p-0" style="background-color:yellow;">
-                    <h1>BoatSharing</h1>
-                </div>
-            
+            <div id="logged-footer" class="col-md-12 text-center align-self-end p-0">
+                <h6 id="footer-copyright">Copyright © BoatSharing - 2020</h6>
+            </div>
+        
         <?php
     }
 ?>

@@ -22,11 +22,10 @@ the_head("Profilo", ["showprofile-style"]);
 <div class="container-fluid p-0">
     <div class="row h-100 w-100 m-0">
 <?php
-
-the_header_for_logged();
-the_navbar();
-the_footer();
+    the_header_for_logged();
+    the_navbar("profile");
+    the_footer_for_logged();
 ?>
-</div>
+    </div>
 </div>
 <?php
