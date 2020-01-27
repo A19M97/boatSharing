@@ -65,12 +65,12 @@ input{
 }
 #navbar{
     background-color: #2E9CCA;
-    padding-top: 90px!important;
+    padding: 90px 10px 0 0;
     
 }
 .nav-list-item-container{
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }

@@ -9,6 +9,7 @@ function update_session_by_user($user){
 }
 
 function is_logged_in(){
-    return (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) ;
+    return (isset($_SESSION['loggedin']) && $_SESSION['loggedin']);
 }
+
 ?>
