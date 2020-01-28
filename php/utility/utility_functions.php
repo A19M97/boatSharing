@@ -17,7 +17,7 @@ function login($email, $pass, $db_connection) {
     mysqli_stmt_execute($stmt);
 
     /* bind result variables */
-    mysqli_stmt_bind_result($stmt, $email, $name, $surname, $pass, $role );
+    mysqli_stmt_bind_result($stmt, $email, $name, $surname, $pass, $image, $role );
 
     /* fetch value */
     if(!mysqli_stmt_fetch($stmt))
@@ -27,6 +27,7 @@ function login($email, $pass, $db_connection) {
             'email'     => $email,
             'name'      => $name,
             'surname'   => $surname,
+            'image'     => $image,
             'role'      => $role
         ];
     }
@@ -57,8 +58,30 @@ function insert_user($email, $first_name, $last_name, $password, $password_confi
 
 }
 
+
+function insert_image($user_email, $image, $db_connection) {
+    
+    $stmt = mysqli_prepare($db_connection, "UPDATE users SET image = ? WHERE email = ?");
+    if(!$stmt) 
+        return null;
+        
+    /* bind parameters for markers */
+    mysqli_stmt_bind_param($stmt, "ss", $image, $user_email);
+
+    /* execute query */
+    mysqli_stmt_execute($stmt);
+
+    /* return error code: 0 no error*/
+    return mysqli_stmt_errno($stmt);
+
+}
+
 function get_db_connection(){
     require_once('db/mysql_credentials.php');
+    global $mysql_host;
+    global $mysql_user;
+    global $mysql_pass;
+    global $mysql_db;
     return mysqli_connect($mysql_host, $mysql_user, $mysql_pass, $mysql_db);
 }
 ?>

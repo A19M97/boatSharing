@@ -83,5 +83,8 @@ input{
 .nav-item-active:hover{
     background-color: #464866;
 }
-
+.content-for-logged{
+    margin-top: 90px;
+    margin-bottom: 70px;
+}
 

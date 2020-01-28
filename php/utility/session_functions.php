@@ -5,6 +5,7 @@ function update_session_by_user($user){
     $_SESSION['email'] = $user['email'];
     $_SESSION['name'] = $user['name'];
     $_SESSION['surname'] = $user['surname'];
+    $_SESSION['image'] = $user['image'];
     $_SESSION['role'] = $user['role'];
 }
 
