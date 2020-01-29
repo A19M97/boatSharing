@@ -7,7 +7,7 @@
     ?>
     <body>
         <div class="container-fluid homepage-container h-100 mh-100">
-            <div class="row h-100">
+            <div id="hp-first-block" class="row h-100">
                 <?php
                 if(!is_logged_in()){
                 ?>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center align-self-end position-absolute">
-                    <a href="#hp-boats-block"><i id="hp-third-arrow" class="fas fa-chevron-down fa-3x secondary-color bounce pointer"></i></a>  
+                    <a href="#hp-first-block"><i id="hp-last-arrow" class="fas fa-chevron-up fa-3x secondary-color bounce pointer"></i></a>  
                 </div>  
             </div>
         <?php

@@ -52,3 +52,13 @@
 #profile-image-selector{
     display: none;
 }
+.info-container{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 35px;
+}
+.text-info{
+    
+}
+.text-info-uppercase{
+    text-transform: uppercase;
+}
