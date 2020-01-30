@@ -1,32 +1,21 @@
 <?php
-
-// TODO: change credentials in the db/mysql_credentials.php file
+session_start();
 require_once('db/mysql_credentials.php');
+require_once('php/utility/utility_functions.php');
 
-// Open DBMS Server connection
+$email = $_SESSION['email']; 
 
-// Get value from $_SESSION
-$email = null; // replace null with $_SESSION
+$first_name = $_POST['first_name']; 
+$last_name = $_POST['last_name']; 
 
-// Get values from $_POST, but do it IN A SECURE WAY
-$first_name = null; // replace null with $_POST and sanitization
-$last_name = null; // replace null with $_POST and sanitization
-
-// Get additional values from $_POST, but do it IN A SECURE WAY
-// If you have additional values, change functions params accordingly
-
-function update_user($email, $first_name, $last_name, $db_connection) {
-    // TODO: update logic here
-    
-    // Return if the update was successful
-    return false;
-}
+$con = get_db_connection();
 
 // Get user from login
-$successful = update_user($email, $first_name, $last_name, $con);
+$error_code = update_user($email, $first_name, $last_name, $con);
 
-if ($successful) {
-    // Success message
+if ($error_code == 0) { //no error
+    $_SESSION['name'] = $first_name;
+    $_SESSION['surname'] = $last_name;
     header("Location: show_profile.php");
     exit();
 } else {

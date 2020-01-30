@@ -13,12 +13,6 @@
                     </div>
                 </a>
 
-                <a href="about_us.php">
-                    <div class="col-md-12 nav-list-item-container no-gutters <?php if($active == "about_us") echo "nav-item-active"; ?> nav-item-inactive">
-                        <i class="fas fa-users"></i> Chi Siamo
-                    </div>
-                </a>
-
                 <a href="boats.php">
                     <div class="col-md-12 nav-list-item-container no-gutters <?php if($active == "boats") echo "nav-item-active"; ?> nav-item-inactive">
                     <i class="fas fa-ship"></i> Barche
@@ -30,7 +24,12 @@
                     <i class="fas fa-map-marked"></i> Porti
                     </div>
                 </a>
-            
+
+                <a href="contact_me.php">
+                    <div class="col-md-12 nav-list-item-container no-gutters <?php if($active == "contact_me") echo "nav-item-active"; ?> nav-item-inactive">
+                        <i class="fas fa-envelope"></i> Contatti
+                    </div>
+                </a>
                 <a href="logout.php">
                     <div class="col-md-12 nav-list-item-container no-gutters <?php if($active == "logout") echo "nav-item-active"; ?> nav-item-inactive">
                         <i class="fas fa-sign-out-alt"></i> Logout

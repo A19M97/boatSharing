@@ -32,7 +32,7 @@ the_head("Profilo", ["showprofile-style"], ["show_profile"]);
         $image = "images/anonymous.png"
 ?>
     <div class="col-md-10 offset-md-2 content-for-logged">
-        <div class="col-md-4 pt-4 pb-4 mt-3 profile-img-conatiner text-center info-container">
+        <div class="col-lg-4 pt-4 pb-4 mt-3 profile-img-conatiner text-center info-container">
             <div class="row m-3">
                 <div class="col-md-12">
                     <figure id="profile-img-figure">
@@ -51,17 +51,23 @@ the_head("Profilo", ["showprofile-style"], ["show_profile"]);
             </div>
             <div class="row m-3">
                 <div class="col-md-12">
-                    <span class="text-info text-info-uppercase"><?php echo $_SESSION['name']; ?></span>
+                    <span id="profile-name" class="text-info text-info-uppercase"><?php echo $_SESSION['name']; ?></span>
                 </div>
             </div>
             <div class="row m-3">
                 <div class="col-md-12">
-                    <span class="text-info text-info-uppercase"><?php echo $_SESSION['surname']; ?></span>
+                    <span id="profile-surname" class="text-info text-info-uppercase"><?php echo $_SESSION['surname']; ?></span>
                 </div>
             </div>
             <div class="row m-3">
                 <div class="col-md-12">
                     <span class="text-info"><?php echo $_SESSION['email']; ?></span>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-md-12">
+                    <div id="save-user-data-loader" class="lds-dual-ring"></div>
+                    <input type="button" id="update-user-data" class="show-profile-button" value="Modifica">
                 </div>
             </div>
         </div>

@@ -56,9 +56,17 @@
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     border-radius: 35px;
 }
-.text-info{
-    
+.show-profile-button{
+    width: 100%;
+    height: 40px;
+    background-color: #2E9CCA;
 }
 .text-info-uppercase{
     text-transform: uppercase;
+}
+.info-input{
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid #2E9CCA;
+    border-radius: 0px;
 }

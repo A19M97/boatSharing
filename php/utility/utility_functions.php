@@ -76,6 +76,22 @@ function insert_image($user_email, $image, $db_connection) {
 
 }
 
+function update_user($email, $first_name, $last_name, $db_connection) {
+
+    $stmt = mysqli_prepare($db_connection, "UPDATE users SET name = ?, surname = ? WHERE email = ?");
+    if(!$stmt) 
+        return null;
+        
+    /* bind parameters for markers */
+    mysqli_stmt_bind_param($stmt, "sss", $first_name, $last_name, $email);
+
+    /* execute query */
+    mysqli_stmt_execute($stmt);
+
+    /* return error code: 0 no error*/
+    return mysqli_stmt_errno($stmt);
+}
+
 function get_db_connection(){
     require_once('db/mysql_credentials.php');
     global $mysql_host;
