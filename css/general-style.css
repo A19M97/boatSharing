@@ -23,6 +23,9 @@ a:hover {
 a:active {
     color: #000;
 }
+*:focus {
+    outline: none;
+}
 .primary-color{
     color: #ffffff;
 }
@@ -110,5 +113,15 @@ input{
     100% {
         transform: rotate(360deg);
     }
+}
+.info-container{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 35px;
+}
+.info-input{
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid #2E9CCA;
+    border-radius: 0px;
 }
 
