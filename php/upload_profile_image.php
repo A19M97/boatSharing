@@ -1,4 +1,9 @@
 <?php
+require_once('php/utility/session_functions.php');
+if(!is_logged_in()){
+    header("location: login.php");
+    exit;
+}
 if(isset($_POST['but_upload'])){
     $name = $_FILES['file']['name'];
 

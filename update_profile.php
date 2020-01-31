@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!is_logged_in()){
+    header("location: login.php");
+    exit;
+}
 require_once('db/mysql_credentials.php');
 require_once('php/utility/utility_functions.php');
 
