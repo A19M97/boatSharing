@@ -100,4 +100,13 @@ function get_db_connection(){
     global $mysql_db;
     return mysqli_connect($mysql_host, $mysql_user, $mysql_pass, $mysql_db);
 }
+
+function sanitize($type, $text){
+    switch($type){
+        case 'email':
+            return filter_var($text, FILTER_SANITIZE_EMAIL);
+        default:
+            return filter_var($text);
+    }
+}
 ?>

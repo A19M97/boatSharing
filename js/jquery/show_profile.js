@@ -3,12 +3,6 @@ $(function() {
         $("#profile-image-selector").toggle();
     });
 
-    // $().click(function(){
-    //     convert_text_to_input_form_element($("#profile-name"));
-    //     convert_text_to_input_form_element($("#profile-surname"));
-    //     $("#update-user-data").replaceWith("<input type=\"button\" class=\"show-profile-button\" id=\"save-user-data\" value=\"Salva\">");
-       
-    // });
     $(document.body).on('click',"#update-user-data", function() {
         convert_text_to_input_form_element($("#profile-name"));
         convert_text_to_input_form_element($("#profile-surname"));

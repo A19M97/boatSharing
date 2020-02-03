@@ -17,7 +17,7 @@ require_once("php/upload_profile_image.php");
 
 // Get profile data from database (check current session)
 
-the_head("Profilo", ["contactme-style"], ["contact_me"]); //TODO this page need js file?
+the_head("Profilo", ["contactme-style"], ["contact_me"]);
 ?>
 <div class="container-fluid p-0">
     <div class="row h-100 w-100 m-0">
@@ -35,17 +35,18 @@ the_head("Profilo", ["contactme-style"], ["contact_me"]); //TODO this page need 
             </div>
             <div class="row mt-3">
                 <div class="col-lg-12">
-                    <input type="email" name="email" class="w-100 text-center info-input" placeholder="La tua E-mail">
+                    <input type="email" name="email" id="email" class="w-100 text-center info-input" placeholder="La tua E-mail">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-lg-12">
-                    <textarea name="message" class="w-100 text-center info-input" placeholder="Messaggio..." cols="50"></textarea>
+                    <textarea name="message" id="message" class="w-100 text-center info-input" placeholder="Messaggio..." cols="50"></textarea>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-lg-8 offset-lg-2">
-                    <input type="button" name="send_message" class="send-message-button" value="Invia">
+                    <div id="send-message-loader" class="lds-dual-ring"></div>
+                    <input type="button" name="send_message" id="send-message" class="send-message-button" value="Invia">
                 </div>
             </div>
         </div>

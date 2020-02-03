@@ -1,12 +1,14 @@
 <?php
-// session_start();
-// require_once('../php/utility/session_functions.php');
-// if(!is_logged_in()){
-//     header("location: login.php");
-//     exit;
-// }
+session_start();
+require_once('../php/utility/session_functions.php');
+if(!is_logged_in()){
+    header("location: login.php");
+    exit;
+}
 
-// Sendù
+require_once('../php/utility/utility_functions.php');
+$email = sanitize('email', $_POST['email']);
+$message = sanitize('text', $_POST['message']);
 
 $to      = 'euj25556@eveav.com';
 $subject = 'the subject';
