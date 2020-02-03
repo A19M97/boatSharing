@@ -105,8 +105,26 @@ function sanitize($type, $text){
     switch($type){
         case 'email':
             return filter_var($text, FILTER_SANITIZE_EMAIL);
+        case 'text':
+            return filter_var($text, FILTER_SANITIZE_STRING);
         default:
             return filter_var($text);
     }
+}
+
+function get_admin_emails($db_connection){
+    
+    $query = "SELECT email FROM users WHERE role='admin'";
+    $result = mysqli_query($db_connection, $query);
+    $new_array = [];
+    while( $row = mysqli_fetch_assoc( $result)){
+        $new_array[] = $row['email']; 
+    }
+    return $new_array;
+
+}
+
+function is_email($email){
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 ?>

@@ -40,7 +40,26 @@ the_head("Profilo", ["contactme-style"], ["contact_me"]);
             </div>
             <div class="row mt-3">
                 <div class="col-lg-12">
+                    <input type="text" name="name" id="name" class="w-100 text-center info-input" placeholder="Il tuo Nome">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-12">
                     <textarea name="message" id="message" class="w-100 text-center info-input" placeholder="Messaggio..." cols="50"></textarea>
+                </div>
+            </div>
+            <div class="row mt-3 success-message">
+                <div class="col-lg-12">
+                    <div class="alert alert-success" role="alert">
+                        E-Mail inviata con successo!
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 failure-message">
+                <div class="col-lg-12">
+                    <div class="alert alert-danger" role="alert">
+                        C'è stato un errore, riprova!
+                    </div>
                 </div>
             </div>
             <div class="row mt-3">

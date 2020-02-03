@@ -20,3 +20,6 @@ textarea.info-input:focus{
     height: 40px;
     background-color: #2E9CCA;
 }
+.success-message, .failure-message{
+    display: none;
+}
