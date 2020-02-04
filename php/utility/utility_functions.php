@@ -127,4 +127,16 @@ function get_admin_emails($db_connection){
 function is_email($email){
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
+
+function get_boats($db_connection){
+    
+    $query = "SELECT * FROM boats";
+    $result = mysqli_query($db_connection, $query);
+    $new_array = [];
+    while( $row = mysqli_fetch_assoc( $result)){
+        $new_array[] = $row; 
+    }
+    return $new_array;
+
+}
 ?>

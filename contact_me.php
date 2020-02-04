@@ -30,7 +30,7 @@ the_head("Profilo", ["contactme-style"], ["contact_me"]);
         <div class="col-lg-6 offset-lg-3 pt-4 pb-4 mt-3 profile-img-conatiner text-center info-container">
             <div class="row mt-3">
                 <div class="col-lg-12">
-                    <span class="primary-font contact-me-title">Hai bisogno di aiuto?</span>
+                    <span class="primary-font logged-title">Hai bisogno di aiuto?</span>
                 </div>
             </div>
             <div class="row mt-3">

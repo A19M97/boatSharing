@@ -1,0 +1,7 @@
+.boat-images{
+    height: 350px;
+}
+.boatsddd-container{
+    height: calc(100% - 210px);
+    overflow-y: scroll;
+}

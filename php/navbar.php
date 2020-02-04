@@ -1,7 +1,7 @@
 <?php
     function the_navbar($active){
         ?>
-            <div id="navbar" class="col-md-2 h-100 position-absolute">
+            <div id="navbar" class="col-md-2 h-100 position-fixed">
                 <a href="index.php">
                     <div class="col-md-12 nav-list-item-container no-gutters nav-item-inactive">
                     <i class="fas fa-home"></i> Homepage

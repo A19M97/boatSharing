@@ -60,11 +60,13 @@ input{
 #logged-footer{
     background-color: #25274D;
     z-index: 2;
-    height: 70px;
+    margin-top: 40px;
 }
 #footer-copyright{
     color: #fff;
-    line-height: 70px;;
+    line-height: 70px;
+    min-height: 70px;
+    margin-bottom: 0;
 }
 #navbar{
     background-color: #2E9CCA;
@@ -123,5 +125,9 @@ input{
     text-align: center;
     border-bottom: 1px solid #2E9CCA;
     border-radius: 0px;
+}
+.logged-title{
+    font-size: 35px;
+    text-transform: uppercase;
 }
 
