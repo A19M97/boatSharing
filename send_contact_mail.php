@@ -25,7 +25,7 @@ if(!is_email($email)){
 
 $con = get_db_connection();
 $admin_emails = get_admin_emails($con);
-
+mysqli_close($con);
 
 if(empty($admin_emails)){
     echo $mail_sent;
@@ -47,8 +47,5 @@ foreach($admin_emails as $admin_email){
         $mail_sent = true;
 }
 echo $mail_sent;
-
-
-
-
+exit;
 ?>

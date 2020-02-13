@@ -124,8 +124,24 @@ function get_admin_emails($db_connection){
 
 }
 
+function get_all_user_emails($db_connection){
+    
+    $query = "SELECT email FROM users WHERE role='user'";
+    $result = mysqli_query($db_connection, $query);
+    $new_array = [];
+    while( $row = mysqli_fetch_assoc( $result)){
+        $new_array[] = $row['email']; 
+    }
+    return $new_array;
+
+}
+
 function is_email($email){
     return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+function is_admin(){
+    return $_SESSION['role'] == 'admin';
 }
 
 function get_boats($db_connection){

@@ -19,30 +19,38 @@ require_once("php/upload_profile_image.php");
 
 // Get profile data from database (check current session)
 
-the_head("Profilo", ["contactme-style"], ["contact_me"]);
+the_head("Newsletter", ["newsletter-style"], ["newsletter"]);
 ?>
 <div class="container-fluid p-0">
     <div class="row h-100 w-100 m-0">
 <?php
     the_header_for_logged();
-    the_navbar("contact_me");
+    the_navbar("newsletter");
 
 ?>
     <div class="col-md-10 offset-md-2 content-for-logged">
         <div class="col-lg-6 offset-lg-3 pt-4 pb-4 mt-3 profile-img-conatiner text-center info-container">
             <div class="row mt-3">
                 <div class="col-lg-12">
-                    <span class="primary-font logged-title">Hai bisogno di aiuto?</span>
+                    <span class="primary-font logged-title">Newsletter</span>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-lg-12">
-                    <input type="email" name="email" id="email" class="w-100 text-center info-input" placeholder="La tua E-mail">
+                    <span>A chi vuoi inviare la newsletter?</span>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-lg-12">
-                    <input type="text" name="name" id="name" class="w-100 text-center info-input" placeholder="Il tuo Nome">
+                    <select name="newsletter-type" id="newsletter-type">
+                        <option value="all">Tutti</option>
+                        <option value="custom">Personalizzato</option>
+                    </select>
+                </div>
+            </div>
+            <div id="select-emails-row" class="row mt-3">
+                <div class="col-lg-12">
+                    <input type="email" name="email" id="email" class="w-100 text-center info-input" placeholder="Scegli chi riceverà la newsletter" multiple>
                 </div>
             </div>
             <div class="row mt-3">
@@ -66,8 +74,8 @@ the_head("Profilo", ["contactme-style"], ["contact_me"]);
             </div>
             <div class="row mt-3">
                 <div class="col-lg-8 offset-lg-2">
-                    <div id="send-message-loader" class="lds-dual-ring"></div>
-                    <input type="button" name="send_message" id="send-message" class="send-message-button" value="Invia">
+                    <div id="send-newsletter-loader" class="lds-dual-ring"></div>
+                    <input type="button" name="send_newsletter" id="send-newsletter" class="send-message-button" value="Invia">
                 </div>
             </div>
         </div>

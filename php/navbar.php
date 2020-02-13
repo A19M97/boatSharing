@@ -1,5 +1,6 @@
 <?php
     function the_navbar($active){
+        require_once('utility/utility_functions.php');
         ?>
             <div id="navbar" class="col-md-2 h-100 position-fixed">
                 <a href="index.php">
@@ -30,6 +31,17 @@
                         <i class="fas fa-envelope"></i> Contatti
                     </div>
                 </a>
+                <?php
+                if(is_admin()){
+                    ?>
+                    <a href="newsletter.php">
+                        <div class="col-md-12 nav-list-item-container no-gutters <?php if($active == "newsletter") echo "nav-item-active"; ?> nav-item-inactive">
+                            <i class="fas fa-mail-bulk"></i> Newsletter
+                        </div>
+                    </a>
+                    <?php
+                }
+                ?>
                 <a href="logout.php">
                     <div class="col-md-12 nav-list-item-container no-gutters <?php if($active == "logout") echo "nav-item-active"; ?> nav-item-inactive">
                         <i class="fas fa-sign-out-alt"></i> Logout

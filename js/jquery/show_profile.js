@@ -30,7 +30,6 @@ $(function() {
                 new_email   : new_email
             },
             success: function(data){
-                alert(data);
                 data = JSON.parse(data);
                 if(data['code'] == 0){
                     convert_input_form_element_to_text($("#profile-name"));
