@@ -61,11 +61,15 @@ the_head("Profilo", ["showprofile-style"], ["show_profile"]);
             </div>
             <div class="row m-3">
                 <div class="col-md-12">
-                    <span class="text-info"><?php echo $_SESSION['email']; ?></span>
+                    <span id="profile-email" class="text-info"><?php echo $_SESSION['email']; ?></span>
                 </div>
             </div>
+            <div id="error-update-data" class="row m-3">
+                <div  class="col-lg-8 offset-lg-2 alert alert-danger h-100 mb-0" role="alert">
+                    <span>Si è verificato un erroe.</span>
+                </div></div>
             <div class="row m-3">
-                <div class="col-lg-8 offset-lg-2">
+                <div class="col-lg-8 offset-lg-2 pr-0 pl-0">
                     <div id="save-user-data-loader" class="lds-dual-ring"></div>
                     <input type="button" id="update-user-data" class="show-profile-button" value="Modifica">
                 </div>

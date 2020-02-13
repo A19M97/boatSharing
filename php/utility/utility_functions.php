@@ -76,14 +76,14 @@ function insert_image($user_email, $image, $db_connection) {
 
 }
 
-function update_user($email, $first_name, $last_name, $db_connection) {
+function update_user($email, $first_name, $last_name, $new_email, $db_connection) {
 
-    $stmt = mysqli_prepare($db_connection, "UPDATE users SET name = ?, surname = ? WHERE email = ?");
+    $stmt = mysqli_prepare($db_connection, "UPDATE users SET email = ?, name = ?, surname = ? WHERE email = ?");
     if(!$stmt) 
         return null;
         
     /* bind parameters for markers */
-    mysqli_stmt_bind_param($stmt, "sss", $first_name, $last_name, $email);
+    mysqli_stmt_bind_param($stmt, "ssss", $new_email, $first_name, $last_name, $email);
 
     /* execute query */
     mysqli_stmt_execute($stmt);

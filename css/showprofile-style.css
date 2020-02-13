@@ -60,3 +60,6 @@
 .text-info-uppercase{
     text-transform: uppercase;
 }
+#error-update-data{
+    display: none;
+}
