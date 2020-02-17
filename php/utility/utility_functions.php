@@ -16,6 +16,10 @@ function login($email, $pass, $db_connection) {
     /* execute query */
     mysqli_stmt_execute($stmt);
 
+    /* error code: 0 no error*/
+    if(mysqli_stmt_errno($stmt) != 0)
+        return null;
+
     /* bind result variables */
     mysqli_stmt_bind_result($stmt, $email, $name, $surname, $pass, $image, $role );
 
@@ -154,5 +158,34 @@ function get_boats($db_connection){
     }
     return $new_array;
 
+}
+
+function search($chars, $db_connection) {
+
+    $stmt = mysqli_prepare($db_connection, "SELECT email FROM users WHERE email LIKE ?");
+    if(!$stmt) 
+        return array();
+    
+        
+    $chars .= "%";
+    /* bind parameters for markers */
+    mysqli_stmt_bind_param($stmt, "s", $chars);
+
+    /* execute query */
+    mysqli_stmt_execute($stmt);
+    
+    $new_array = [];
+
+    /* error code: 0 no error*/
+    if(mysqli_stmt_errno($stmt) != 0)
+        return $new_array;
+
+    $res = mysqli_stmt_get_result($stmt);
+    
+    while ($row = mysqli_fetch_assoc($res)){
+        $new_array[] = $row['email']; 
+    }
+    return $new_array;
+   
 }
 ?>

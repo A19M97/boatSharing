@@ -17,9 +17,7 @@ require_once('php/footer.php');
 require_once("php/upload_profile_image.php");
 
 
-// Get profile data from database (check current session)
-
-the_head("Newsletter", ["newsletter-style"], ["newsletter"]);
+the_head("Newsletter", ["newsletter-style"], ["newsletter", "search"]);
 ?>
 <div class="container-fluid p-0">
     <div class="row h-100 w-100 m-0">
@@ -50,9 +48,20 @@ the_head("Newsletter", ["newsletter-style"], ["newsletter"]);
             </div>
             <div id="select-emails-row" class="row mt-3">
                 <div class="col-lg-12">
-                    <input type="email" name="email" id="email" class="w-100 text-center info-input" placeholder="Scegli chi riceverà la newsletter" multiple>
+                    <!-- <input type="email" name="email" id="email" multiple> -->
+                    <form action="search.php" method="GET" autocomplete="off">
+                        <label for="search">Cerca...</label>
+                        <input type="text" name="search" class="w-100 text-center info-input search" placeholder="Separa le E-mail con una virgola.">
+                        <!-- <input type="submit" value="Submit"> -->
+                    </form>
+                </div>
+                <div id="result-search-container" class="col-lg-12 position-absolute">
+                    <div id="results" class="col-lg-12 border-search p-0">
+                        <!-- <div class="email-container no-gutters pointer">andrea@ciao.it</div> -->
+                    </div>
                 </div>
             </div>
+            
             <div class="row mt-3">
                 <div class="col-lg-12">
                     <textarea name="message" id="message" class="w-100 text-center info-input" placeholder="Messaggio..." cols="50"></textarea>

@@ -3,8 +3,12 @@ $(function() {
         $("#select-emails-row").toggle("slow");
     });
     $("#send-newsletter").click(function(){
+        $("#send-newsletter").hide();
+        $("#send-newsletter-loader").show();
+        $(".success-message").hide();
+        $(".failure-message").hide();
         newsletter_type = $("#newsletter-type").val();
-        email = $("#email").val();
+        email = $("#search").val();
         message = $("#message").val();
         
         $.ajax({
@@ -16,21 +20,13 @@ $(function() {
                 message   : message
             },
             success: function(data){
-                
-                // data = JSON.parse(data);
-                // if(data['code'] == 0){
-                //     convert_input_form_element_to_text($("#profile-name"));
-                //     convert_input_form_element_to_text($("#profile-surname"));
-                //     convert_input_form_element_to_text($("#profile-email"));
-                //     $("#save-user-data").replaceWith("<input type=\"button\" class=\"show-profile-button\" id=\"update-user-data\" value=\"Modifica\">");
-                //     $("#save-user-data-loader").hide();
-                //     $("#save-user-data").show();
-                // }else{
-                //     $("#save-user-data-loader").hide();
-                //     $("#save-user-data").show();
-                //     $("#error-update-data").show();
-                //     $("#error-update-data div span").text(data['message']);
-                // }
+                $("#send-newsletter-loader").hide();
+                $("#send-newsletter").show();
+                if(data){
+                    $(".success-message").show();
+                }else{
+                    $(".failure-message").show();
+                }
             },
             error: function(){
                 $("#error-update-data").show();

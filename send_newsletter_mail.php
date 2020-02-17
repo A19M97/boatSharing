@@ -9,13 +9,14 @@ if(!is_logged_in()){
 require_once('php/utility/utility_functions.php');
 
 $mail_sent = false;
-print_r($_POST);
 $newsletter_type = $_POST['newsletter_type'];
 
 if($newsletter_type == 'custom'){
     $emails = $_POST['email'];
     if(empty($emails))
         return;
+
+    $emails = explode(",", $emails);
     foreach($emails as $email)
         $emails[] = sanitize("email", $email);
 }else{
@@ -30,20 +31,20 @@ if(empty($message)){
     echo $mail_sent;
     return;
 }
-// foreach($emails as $email){
+foreach($emails as $email){
 
-//     $to      = $email;
-//     $subject = 'BoatSharing - Newsletter!';
-//     $message = $message;
-//     $headers = array(
-//         'From' => "BoatSharing",
-//         'Reply-To' => "no-replay@boatsharing.it",
-//         'X-Mailer' => 'PHP/' . phpversion()
-//     );
+    $to      = $email;
+    $subject = 'BoatSharing - Newsletter!';
+    $message = $message;
+    $headers = array(
+        'From' => "newsletter@boatsharing.it",
+        'Reply-To' => "no-replay@boatsharing.it",
+        'X-Mailer' => 'PHP/' . phpversion()
+    );
 
-//     if(mail($to, $subject, $message, $headers) && !$mail_sent)
-//         $mail_sent = true;
-// }
+    if(mail($to, $subject, $message, $headers) && !$mail_sent)
+        $mail_sent = true;
+}
 echo $mail_sent;
 exit;
 ?>

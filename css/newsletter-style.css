@@ -1,0 +1,24 @@
+#send-newsletter-loader{
+    margin: 0 auto;
+}
+#result-search-container{
+    display: none;
+    z-index: 1;
+    max-height: 200px;
+    overflow: overlay;
+    background-color: #fff;
+    
+}
+.border-search{
+    border-left: 1px solid #2E9CCA;
+    border-bottom: 1px solid #2E9CCA;
+    border-right: 1px solid #2E9CCA;
+}
+.email-container{
+    line-height: 40px;
+    height: 40px;
+}
+.email-container:hover{
+    background-color: #2E9CCA;
+    color: white;
+}
