@@ -10,57 +10,62 @@
     $message['is_error'] = false;
     $message['description'] = "";
 
-    if(isset($_POST['sign-up'])){
-        
-        if(isset($_POST['email']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['pass']) && isset($_POST['confirm'])){
-
-            if($_POST['pass'] != $_POST['confirm']){
-                $message['is_error'] = true;
-                $message['description'] = "Le password devono coincidere.";
-            }else{
-                require_once('php/utility/utility_functions.php');
-
-                // Open DBMS Server connection
-                $con = get_db_connection();
-
-                $email = $_POST['email']; 
-                $first_name = $_POST['firstname'];
-                $last_name = $_POST['lastname']; 
-                $password = $_POST['pass']; 
-                $password_confirm = $_POST['confirm']; 
-
-                // Get user from login
-                $db_response = insert_user($email, $first_name, $last_name, $password, $password_confirm, $con);
-
-                switch($db_response){
-                    case 0:
-                        /* Registration OK. */
-                        require_once('php/utility/session_functions.php');
-                        $user = [
-                            'email'     => $email,
-                            'name'      => $first_name,
-                            'surname'   => $last_name,
-                            'role'      => "user"
-                        ];
-                        update_session_by_user($user);
-                        header("location: show_profile.php");
-                        // $message['is_error'] = false;
-                        // $message['description'] = "Registrazione effettuata con successo.";
-                        break;
-                    case 1062:
-                        $message['is_error'] = true;
-                        $message['description'] = "E-mail già in uso. <a href=\"login.php\" id=\"sign-in-now-link\">Accedi ora.</a>";
-                        break;
-                    default:
-                        $message['is_error'] = true;
-                        $message['description'] = "C'è stato un errore nel processo di registrazione. Si prega di riprovare.";
-                }
-            }
-        }else{
+    
+    
+    if(isset($_POST['email']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['pass']) && isset($_POST['confirm'])){
+        require_once('php/utility/utility_functions.php');
+        if($_POST['pass'] != $_POST['confirm']){
             $message['is_error'] = true;
-            $message['description'] = "Tutti i campi sono obbligatori.";
+            $message['description'] = "Le password devono coincidere.";
+        }else if(!is_valid_pass($_POST['pass'])){
+            $message['is_error'] = true;
+            $message['description'] = "La password deve avere almeno 8 caratteri.";
+        }else if(!is_email($_POST['email'])){
+            $message['is_error'] = true;
+            $message['description'] = "Email errata.";
+        }else{
+            
+
+            // Open DBMS Server connection
+            $con = get_db_connection();
+
+            $email = $_POST['email']; 
+            $first_name = $_POST['firstname'];
+            $last_name = $_POST['lastname']; 
+            $password = trim($_POST['pass']); 
+            $password_confirm = $_POST['confirm']; 
+
+            $db_response = insert_user($email, $first_name, $last_name, $password, $password_confirm, $con);
+
+            mysqli_close($con);
+
+            switch($db_response){
+                case 0:
+                    /* Registration OK. */
+                    require_once('php/utility/session_functions.php');
+                    $user = [
+                        'email'     => $email,
+                        'name'      => $first_name,
+                        'surname'   => $last_name,
+                        'role'      => "user"
+                    ];
+                    update_session_by_user($user);
+                    header("location: show_profile.php");
+                    break;
+                case 1062:
+                    $message['is_error'] = true;
+                    $message['description'] = "E-mail già in uso. <a href=\"login.php\" id=\"sign-in-now-link\">Accedi ora.</a>";
+                    break;
+                default:
+                    $message['is_error'] = true;
+                    $message['description'] = "C'è stato un errore nel processo di registrazione. Si prega di riprovare.";
+            }
         }
+    }else if(isset($_POST['sign-up'])){
+        $message['is_error'] = true;
+        $message['description'] = "Tutti i campi sono obbligatori.";
     }
+
     the_head("Registrati", ["registration-style"]);
 ?>
 <body>
@@ -73,7 +78,7 @@
                 <div class="col-md-12">
                     <h1 class="primary-font primary-color">REGISTRATI</h1>
                 </div>
-                <form action="registration.php" method="POST">
+                <form action="registration.php" method="POST" autocomplete="off">
                     <div class="col-md-12 registration-input-div">
                         <input type="text" name="firstname" <?php if(isset($_POST['firstname'])) echo 'value="'.$_POST['firstname'].'"'; ?> class="w-100 registration-input" placeholder="Nome">
                     </div>

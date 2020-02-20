@@ -13,7 +13,7 @@ require_once('php/navbar.php');
 require_once('php/footer.php');
 
 
-the_head("Barche", ["boats-style"], ["boats"]);
+the_head("Barche", ["boats-style"]);
 ?>
 <div class="container-fluid p-0">
     <div class="row h-100 w-100 m-0">
@@ -29,33 +29,27 @@ the_head("Barche", ["boats-style"], ["boats"]);
                     <span class="primary-font logged-title">Le nostre barche</span>
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col-lg-12">
-                    <input type="text" name="search" id="search_boat" class="w-100 text-center info-input" placeholder="Cerca...">
-                </div>
-            </div>
             <div class="row mt-5">
                 <?php 
                     $con = get_db_connection();
                     $boats = get_boats($con);
+                    mysqli_close($con);
                     foreach($boats as $boat){
                         ?>
                         
                         <div class="col-lg-4 float-left text-center">
                             <div class="card mx-auto " >
                             <!-- Image -->
-                                <img class="card-img-top boat-images" src="data:image/jpeg;base64,<?php echo base64_encode( $boat['image'] );?>" alt="Photo of sunset">
-
+                                <img class="card-img-top boat-images" src="data:image/jpeg;base64,<?php echo base64_encode( $boat['image'] );?>" alt="Boat's image">
                             <!-- Text Content -->
                                 <div class="card-body">
-                                    <p class="card-text">Well it was good while it lasted...</p>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum urna at finibus rutrum..</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <?
+                        <?php
                     }
-                    
                 ?>
             </div>  
         </div>
@@ -65,4 +59,3 @@ the_head("Barche", ["boats-style"], ["boats"]);
 ?>
     </div>
 </div>
-<?php

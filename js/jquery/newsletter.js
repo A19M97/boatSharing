@@ -8,7 +8,11 @@ $(function() {
         $(".success-message").hide();
         $(".failure-message").hide();
         newsletter_type = $("#newsletter-type").val();
-        email = $("#search").val();
+        if(newsletter_type == 'custom'){
+            var email = $("#selected-emails").find(".selected-email").text();
+        }else{
+            var email = null;
+        }
         message = $("#message").val();
         
         $.ajax({
@@ -33,4 +37,18 @@ $(function() {
             }
         });
     });
+
+    $(".email-container").click(function(){
+        alert("ciao");
+        email = this.data("email");
+        alert(email);
+
+    });
 });
+
+function email_click(element){
+    email = $(element).data("email");
+    $("#selected-emails").append('<span class="selected-email">'+email+',</span>');
+    $(".search").val('');
+    $("#results").hide();
+}

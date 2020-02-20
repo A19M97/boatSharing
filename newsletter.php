@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once('php/utility/session_functions.php');
-if(!is_logged_in()){
+require_once('php/utility/utility_functions.php');
+if(!is_logged_in() || !is_admin()){
     header("location: login.php");
     exit;
 }
@@ -40,18 +41,19 @@ the_head("Newsletter", ["newsletter-style"], ["newsletter", "search"]);
             </div>
             <div class="row mt-3">
                 <div class="col-lg-12">
-                    <select name="newsletter-type" id="newsletter-type">
+                    <select name="newsletter-type" id="newsletter-type" class="col-md-12 info-input">
                         <option value="all">Tutti</option>
                         <option value="custom">Personalizzato</option>
                     </select>
                 </div>
             </div>
             <div id="select-emails-row" class="row mt-3">
+                <div id="selected-emails" class="col-lg-12">
+                    
+                </div>
                 <div class="col-lg-12">
-                    <!-- <input type="email" name="email" id="email" multiple> -->
                     <form action="search.php" method="GET" autocomplete="off">
-                        <label for="search">Cerca...</label>
-                        <input type="text" name="search" class="w-100 text-center info-input search" placeholder="Separa le E-mail con una virgola.">
+                        <input type="text" name="search" class="w-100 text-center info-input search" placeholder="Cerca e seleziona le E-mail.">
                         <!-- <input type="submit" value="Submit"> -->
                     </form>
                 </div>

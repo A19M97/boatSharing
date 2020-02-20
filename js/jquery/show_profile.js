@@ -13,8 +13,8 @@ $(function() {
     
     $(document.body).on('click','#save-user-data', function() {  
 
-        var first_name = $("#profile-name").val();
-        var last_name = $("#profile-surname").val();
+        var firstname = $("#profile-name").val();
+        var lastname = $("#profile-surname").val();
         var new_email = $("#profile-email").val();
 
         $("#save-user-data").hide();
@@ -25,8 +25,8 @@ $(function() {
             url: 'update_profile.php',
             type: 'POST',
             data: {
-                first_name  : first_name,
-                last_name   : last_name,
+                firstname  : firstname,
+                lastname   : lastname,
                 new_email   : new_email
             },
             success: function(data){

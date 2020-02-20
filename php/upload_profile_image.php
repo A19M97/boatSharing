@@ -28,6 +28,8 @@ if(isset($_POST['but_upload'])){
             echo "C'è stato un errore, riprova.";
         else
             $_SESSION['image'] = $image;
+        
+        mysqli_close($con);
     }
 }
 

@@ -22,3 +22,15 @@
     background-color: #2E9CCA;
     color: white;
 }
+#newsletter-type{
+    border: unset;
+    border-bottom: 1px solid #2E9CCA;
+}
+.selected-email{
+    background-color: lightgrey;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 6px;
+    display: block;
+    float: left;
+}

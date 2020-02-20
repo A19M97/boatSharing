@@ -12,25 +12,30 @@ $mail_sent = false;
 $newsletter_type = $_POST['newsletter_type'];
 
 if($newsletter_type == 'custom'){
-    $emails = $_POST['email'];
-    if(empty($emails))
+    $email = $_POST['email'];
+    if(empty($email))
         return;
 
-    $emails = explode(",", $emails);
-    foreach($emails as $email)
-        $emails[] = sanitize("email", $email);
+    $email = explode(",", $email);
+    
+    $email = array_unique($email);
+
+    array_pop($email);
+    
+    foreach($email as $_email)
+        $emails[] = sanitize("email", $_email);
 }else{
     $con = get_db_connection();
     $emails = get_all_user_emails($con);
     mysqli_close($con); 
 }
-
 $message = sanitize('text', $_POST['message']);
 
 if(empty($message)){
     echo $mail_sent;
     return;
 }
+
 foreach($emails as $email){
 
     $to      = $email;
@@ -41,10 +46,10 @@ foreach($emails as $email){
         'Reply-To' => "no-replay@boatsharing.it",
         'X-Mailer' => 'PHP/' . phpversion()
     );
-
-    if(mail($to, $subject, $message, $headers) && !$mail_sent)
+    if(mail($to, $subject, $message, implode("\r\n", $headers)) && !$mail_sent)
         $mail_sent = true;
 }
+
 echo $mail_sent;
 exit;
 ?>

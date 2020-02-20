@@ -2,28 +2,30 @@
 session_start();
 require_once('php/head.php');
 require_once('php/footer.php');
-if(isset($_POST['sign-in'])){
-    if(isset($_POST['email']) && isset($_POST['pass'])){
-        require_once('php/utility/utility_functions.php');
-        require_once('php/utility/session_functions.php');
-        
-        // Open DBMS Server connection
-        $con = get_db_connection();
 
-        $email = $_POST['email']; 
-        $pass = $_POST['pass']; 
+if(isset($_POST['email']) && isset($_POST['pass'])){
+    require_once('php/utility/utility_functions.php');
+    require_once('php/utility/session_functions.php');
+    
+    // Open DBMS Server connection
+    $con = get_db_connection();
 
-        // Get user from login
-        $user = login($email, $pass, $con);
+    $email = $_POST['email']; 
+    $pass = $_POST['pass']; 
 
-        if (!$user) {
-            $error = "Credenziali errate, riprova!";
-        } else {
-            update_session_by_user($user);
-            header("location: show_profile.php");
-        }
+    // Get user from login
+    $user = login($email, $pass, $con);
+
+    mysqli_close($con);
+
+    if (!$user) {
+        $error = "Credenziali errate, riprova!";
+    } else {
+        update_session_by_user($user);
+        header("location: show_profile.php");
     }
 }
+
 the_head("Login", ["login-style"]);
 ?>
 
