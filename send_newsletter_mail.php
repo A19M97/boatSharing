@@ -44,9 +44,10 @@ foreach($emails as $email){
     $headers = array(
         'From' => "newsletter@boatsharing.it",
         'Reply-To' => "no-replay@boatsharing.it",
-        'X-Mailer' => 'PHP/' . phpversion()
+        'X-Mailer' => 'PHP/' . phpversion(),
+        'X-MSMail-Priority' => 'High'
     );
-    if(mail($to, $subject, $message, implode("\r\n", $headers)) && !$mail_sent)
+    if(mail($to, $subject, $message, $headers) && !$mail_sent)
         $mail_sent = true;
 }
 

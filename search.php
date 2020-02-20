@@ -2,11 +2,7 @@
 session_start();
 require_once('php/utility/session_functions.php');
 require_once('php/utility/utility_functions.php');
-if(!isset($_SERVER['HTTP_REFERER'])){
-    header('location: index.php');
-    exit;
-}
-if(!is_logged_in() || !is_admin()){
+if(!is_admin()){
     header("location: login.php");
     exit;
 }

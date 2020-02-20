@@ -43,7 +43,7 @@ foreach($admin_emails as $admin_email){
         'X-Mailer' => 'PHP/' . phpversion()
     );
 
-    if(mail($to, $subject, $message,  implode("\r\n", $headers)) && !$mail_sent)
+    if(mail($to, $subject, $message, $headers) && !$mail_sent)
         $mail_sent = true;
 }
 echo $mail_sent;

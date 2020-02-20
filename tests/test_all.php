@@ -7,7 +7,7 @@ require 'test_update.php';
 require 'test_search.php';
 require 'utils.php';
 
-$baseurl =  'http://localhost/~S4471545:5000';
+$baseurl =  'http://localhost/boatSharing';
 
 echo "[+] Testing Registration - Login - Show Profile\n<br>";
 
@@ -65,6 +65,12 @@ echo check_correct_user($email, $first_name, $last_name, show_logged_user($baseu
 echo "------------------------\n<br>";
 echo "[+] Testing Search\n<br>";
 
-search($email);
+echo "[-] Logged in as Admin\n<br>";
+login("andrea.mugnai97@gmail.com", "ciao", $baseurl);
 
-// TODO: implement search check
+echo "[-] Looking for $email in search.php:\n<br>";
+
+echo check_search_found($email, search($email, $baseurl))
+    ? "[*] Success!\n<br>"
+    : "[*] Failed\n<br>";
+
